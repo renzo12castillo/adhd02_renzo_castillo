@@ -4,23 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ciudadanos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
 
     <main class="container text-center">
         <div class="row">
-            <h1>Ciudadanos</h1>
+            <h1 class="color_blanco_de_letra">Ciudadanos</h1>
 
-            <!-- ACA SE AGREGARA EL BOTON PARA AGREGAR MAS CIUDADANOS -->
+            <!-- ACA SE AGREGARA EL BOTON PARA AGREGAR MAS CIUDADANOS SE AGREGARA UN MODAL-->
 
-            <form action="" method="post" style="display:inline;">
-                <input type="hidden" name="" value="">
-                <button type="submit" name="" class="btn btn-success"><i class="bi bi-file-earmark-plus"></i></button>
-            </form>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-bookmark-plus"></i></button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Ciudadano</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="../procesos_crud/ciudadanos_crud.php" method="post">
+                                <label for="txt_dpi" class="form-label">DPI</label>
+                                <input type="number" name="txt_dpi" id="txt_dpi" class="form-control">
+
+                                <label for="txt_apellido" class="form-label">Apellido</label>
+                                <input type="text" name="txt_apellido" id="txt_apellido" class="form-control">
+
+                                <label for="txt_nombre" class="form-label">Nombre</label>
+                                <input type="text" name="txt_nombre" id="txt_nombre" class="form-control">
+
+                                <label for="txt_direccion" class="form-label">Direccion</label>
+                                <input type="text" name="txt_direccion" id="txt_direccion" class="form-control">
+
+                                <label for="tel_casa" class="form-label">Telefono de Casa</label>
+                                <input type="tel" name="tel_casa" id="tel_casa" class="form-control">
+
+                                <label for="tel_movil" class="form-label">Telefono Movil</label>
+                                <input type="tel" name="tel_movil" id="tel_movil" class="form-control">
+
+                                <label for="email_email" class="form-label">Email</label>
+                                <input type="email" name="email_email" id="email_email" class="form-control">
+
+                                <label for="date_fecha_de_nacimiento" class="form-label">Fecha de Nacimiento</label>
+                                <input type="date" name="date_fecha_de_nacimiento" id="date_fecha_de_nacimiento" class="form-control">
+
+                                <label for="txt_nivel_academico" class="form-label">Nivel Academico</label>
+                                <input type="text" name="txt_nivel_academico" id="txt_nivel_academico" class="form-control">
+
+                                <label for="txt_municipalidad" class="form-label">Municipalidad</label>
+                                <input type="text" name="txt_municipalidad" id="txt_municipalidad" class="form-control">
+
+                                <label for="pwd_contraseña" class="form-label">Contraseña</label>
+                                <input type="password" name="pwd_contraseña" id="pwd_contraseña" class="form-control">
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-primary" name="btn_insertar" id="btn_insertar">Agregar Ciudadano</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 
             <div class="col-12">
                 <table class="table table-dark table-striped table-responsive">
