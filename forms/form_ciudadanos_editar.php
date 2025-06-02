@@ -25,7 +25,7 @@
             <div class="col-12">
                 <h1>Editar Ciudadanos</h1>
 
-                <form action="../vistas/ciudadanos.php" method="post">
+                <form action="../procesos_crud/ciudadanos_crud.php" method="post">
                     <label for="txt_dpi" class="form-label">DPI</label>
                     <input type="number" name="txt_dpi" id="txt_dpi" class="form-control" readonly value="<?=$codigo;?>">
 
@@ -56,7 +56,7 @@
                     <label for="txt_municipalidad" class="form-label">Municipalidad</label>
                     <input type="text" name="txt_municipalidad" id="txt_municipalidad" class="form-control" readonly value="<?=$resultado['cod_muni'];?>">
 
-                    <button class="btn btn-outline-success btn-lg" type="submit" name="btn_editar_ciudadano" id="btn_editar_ciudadano">Guardar Cambios</button>
+                    <button class="btn btn-outline-success btn-lg" type="submit" name="guardar_cambios" id="guardar_cambios">Guardar Cambios</button>
                 </form>
             </div>
         </div>
