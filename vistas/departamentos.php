@@ -12,9 +12,53 @@
 
 <body>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <a href="../menu.php" class="btn btn-outline-light">
+                    <i class="bi bi-arrow-return-left"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <main>
-        <div class="container">
+        <div class="container text-center">
             <h1 class="color_blanco_de_letra">Departamentos</h1>
+
+        <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-bookmark-plus"></i></button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Departamento</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="../procesos_crud/departamentos_crud.php" method="post">
+                                <label for="txt_codigo_de_departamento" class="form-label">Codigo de Departamento</label>
+                                <input type="number" name="txt_codigo_de_departamento" id="txt_codigo_de_departamento" class="form-control">
+
+                                <label for="txt_nombre_del_departamento" class="form-label">Nombre del Departamento</label>
+                                <input type="text" name="txt_nombre_del_departamento" id="txt_nombre_del_departamento" class="form-control">
+
+                                <label for="txt_codigo_de_region" class="form-label">Codigo Region</label>
+                                <input type="text" name="txt_codigo_de_region" id="txt_codigo_de_region" class="form-control">
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-primary" name="btn_insertar_depto" id="btn_insertar_depto">Agregar Departamento</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="row">
                 <div class="col-12">
                     <table class="table table-dark table-striped table-responsive">
@@ -29,7 +73,7 @@
                         <tbody>
                             <?php
                             require_once("../procesos_crud/conexion.php");
-                            // require_once("../procesos_crud/departamentos_crud.php"); DESCOMENTA ESTA LINEA CUANDO AGREGUES LOS PROCESOS CRUD// 
+                            require_once("../procesos_crud/departamentos_crud.php");
                             $sql = "SELECT * FROM departamentos";
                             $ejecutar = mysqli_query($conexion, $sql);
 
@@ -45,8 +89,8 @@
                                             <button type="submit" name="btn_editar_departamento" id="btn_editar_departamento" class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
                                         </form>
                                         <form action="departamentos.php" method="post">
-                                            <input type="hidden" name="" style="display:inline;" value="">
-                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                                            <input type="hidden" name="txt_eliminar_departamento" style="display:inline;" value="<?= $resultado['cod_depto'];?>">
+                                            <button type="submit" class="btn btn-danger" name="btn_eliminar_departamento" id="btn_eliminar_departamento"><i class="bi bi-trash3-fill"></i></button>
                                         </form>
                                     </td>
                                 </tr>

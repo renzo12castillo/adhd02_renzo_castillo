@@ -12,14 +12,26 @@
 
 <body>
 
-    <main class="container text-center">
+    <div class="container">
         <div class="row">
-            <h1 class="color_blanco_de_letra">Ciudadanos</h1>
+            <div class="col-3">
+                <a href="../menu.php" class="btn btn-outline-light">
+                    <i class="bi bi-arrow-return-left"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
-            <!-- ACA SE AGREGARA EL BOTON PARA AGREGAR MAS CIUDADANOS SE AGREGARA UN MODAL-->
+    <main class="container text-center">
 
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-bookmark-plus"></i></button>
+        <h1 class="color_blanco_de_letra">Ciudadanos</h1>
+
+        <!-- ACA SE AGREGARA EL BOTON PARA AGREGAR MAS CIUDADANOS SE AGREGARA UN MODAL-->
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-bookmark-plus"></i></button>
+
+        <div class="row">
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
