@@ -7,6 +7,7 @@
     <title>Municipios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core">
     <link rel="stylesheet" href="..//css/styles.css">
 </head>
 
@@ -14,7 +15,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-3">
+            <div class="col-3 square xyz-in" xyz="duration-20 ease-in-out-back flip-up-100% iterate-infinite">
                 <a href="../menu.php" class="btn btn-outline-light">
                     <i class="bi bi-arrow-return-left"></i>
                 </a>
@@ -61,7 +62,7 @@
 
             <div class="row">
                 <div class="col-12">
-                    <table class="table table-dark table-striped table-responsive">
+                    <table class="table table-dark table-striped table-responsive square xyz-in" xyz="small-100% origin-top">
                         <thead>
                             <tr>
                                 <th scope="col">Codigo de Municipio</th>
